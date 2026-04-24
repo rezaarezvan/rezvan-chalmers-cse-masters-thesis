@@ -56,3 +56,7 @@ Your content.
 
 ## License
 MIT. See `LICENSE` for details.
+
+The included Chalmers and University of Gothenburg logo assets are used to
+reproduce the thesis layout. Their use is subject to the universities' own
+visual identity and logo rules.
