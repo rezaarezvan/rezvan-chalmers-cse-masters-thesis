@@ -27,15 +27,20 @@
   oneside: false,
 )
 
-= Introduction
+= Introduction <intro>
 
 This example intentionally keeps content brief and self-contained.
 
-== A Section
+== A Section <section>
 
 The template provides a thesis prelude, page styles, heading numbering, and appendix handling.
+Heading references distinguish @intro from @section.
 
 #show: appendices
-= Appendix
+= Appendix <appendix>
 
-Appendix placeholder text.
+Appendix placeholder text. Appendix references use @appendix.
+
+== Appendix Section <appendix-section>
+
+Lower appendix headings reference as @appendix-section.
