@@ -54,6 +54,9 @@ Your content.
 - `examples/`: standalone local examples.
 - `template/`: `typst init` scaffold.
 
+## Credits
+All credits for the original template go to [CMDJojo's mastery-chs repository](https://github.com/CMDJojo/mastery-chs) (and all forks) for the initial design and layout, which this package is based on.
+
 ## License
 MIT. See `LICENSE` for details.
 
