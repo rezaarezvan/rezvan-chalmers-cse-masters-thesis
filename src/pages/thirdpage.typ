@@ -7,7 +7,7 @@
   align(center + horizon,
     grid(
       rows: (auto, 1fr, auto),
-      large(smallcaps[#("Master's Thesis " + str(year))]),
+      large(smallcaps[#("Master’s Thesis " + str(year))]),
       {
         v(-2cm)
         x-large(weight: "semibold", title)
@@ -22,7 +22,7 @@
       },
       [
         #if titlepage-logo == none {
-          image("../img/logos-vertical.png", width: 26%)
+          image("../img/logos-vertical.svg", width: 26%)
         } else {
           titlepage-logo
         }

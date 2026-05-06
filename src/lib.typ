@@ -11,7 +11,7 @@
 #let thesispurple = rgb("#6600CC")
 #let thesisgray = rgb("#666666")
 
-#let runtime-state = state("chalmers-cse-thesis-runtime", (oneside: false))
+#let runtime-state = state("chalmers-cse-masters-thesis-runtime", (oneside: false))
 
 #let heading-supplement(it) = if it.depth == 1 {
   [Chapter]
@@ -116,6 +116,7 @@
   typeset-with,
   cover-caption,
   printed-by,
+  series,
   oneside,
 ) = {
   let blankpagebreak(..args) = {
@@ -177,6 +178,7 @@
     typeset-with,
     cover-caption,
     printed-by,
+    series,
   )
 
   abspage(extra-faithful, school, title, subtitle, authors, department, abstract, keywords)
@@ -221,7 +223,7 @@
   extra-faithful: false,
   school: ("Chalmers University of Technology", "University of Gothenburg"),
   date: datetime.today(),
-  title: "A Chalmers University of Technology Master's thesis template for Typst",
+  title: "A Chalmers University of Technology Master’s thesis template for Typst",
   subtitle: "A subtitle that can be very long if necessary",
   authors: ("Name Familyname 1", "Name Familyname 2"),
   department: "Department of Computer Science and Engineering",
@@ -245,6 +247,7 @@
   typeset-with: "Typst",
   cover-caption: none,
   printed-by: none,
+  series: none,
   content,
 ) = {
   runtime-state.update((oneside: oneside))
@@ -323,6 +326,7 @@
     typeset-with,
     cover-caption,
     printed-by,
+    series,
     oneside,
   )
 

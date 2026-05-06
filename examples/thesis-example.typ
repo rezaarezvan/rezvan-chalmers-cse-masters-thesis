@@ -20,6 +20,7 @@
     We thank everyone who helped validate the migration from LaTeX to Typst.
   ],
   keywords: ("Typst", "Thesis"),
+  series: none,
   figures: true,
   tables: true,
   listings: false,

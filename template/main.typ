@@ -1,4 +1,4 @@
-#import "@preview/rezvan-chalmers-cse-thesis:0.1.0": template, appendices
+#import "@preview/rezvan-chalmers-cse-masters-thesis:0.1.0": template, appendices
 
 #let department = "Department of Computer Science and Engineering"
 
@@ -13,6 +13,8 @@
   abstract: [Write your abstract here.],
   acknowledgements: [Write your acknowledgements here.],
   keywords: ("keyword-1", "keyword-2"),
+  // Optional CSE/ODR series identifier, for example: "CSE 25-122".
+  series: none,
   cover-caption: none,
   printed-by: none,
 )

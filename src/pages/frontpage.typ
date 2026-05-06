@@ -6,7 +6,7 @@
   grid(
     rows: (auto, 1fr, auto),
     {
-      image("../img/logos-horizontal.jpg")
+      image("../img/logos-horizontal.svg")
       v(1em)
       line(length: 100%, stroke: black + 1pt)
     },
@@ -62,7 +62,7 @@
 
     #v(22pt)
 
-    Master's thesis in #subject
+    Master’s thesis in #subject
 
     #v(14pt)
 

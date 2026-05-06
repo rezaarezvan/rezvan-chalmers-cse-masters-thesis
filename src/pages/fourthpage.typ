@@ -16,6 +16,7 @@
   typeset-with,
   cover-caption,
   printed-by,
+  series,
 ) = {
   grid(
     rows: (1fr, auto),
@@ -38,6 +39,10 @@
         #sym.copyright #fmt-auth(authors.join(", ")), #year.
       ]
       vv
+      if series != none {
+        [#series]
+        vv
+      }
       if supervisor != none {
         [*Supervisor:* #linebreak()]
         [#supervisor.at(0), #supervisor.at(1) #linebreak()]
@@ -55,11 +60,11 @@
       }
 
       [
-        Master's Thesis #year\
+        Master’s Thesis #year\
         #department\
         #join(school, " and ")\
         SE-412 96 Gothenburg\
-        Telephone +46 31 772 1000
+        Telephone +46 31-772 10 00
       ]
       vv
       [
