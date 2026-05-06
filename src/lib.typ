@@ -90,6 +90,28 @@
   }
 }
 
+#let illustrated-cover-background(
+  illustration,
+  extra-faithful: false,
+  dx: 10%,
+  dy: 15%,
+) = {
+  let inset = if extra-faithful {
+    (left: 60pt, right: 10pt, top: 44pt, bottom: 30pt)
+  } else {
+    (left: 60pt, right: 60pt, top: 44pt, bottom: 30pt)
+  }
+
+  block(width: 100%, height: 100%, inset: inset)[
+    #image("img/logos-horizontal.svg")
+    #v(1em)
+    #line(length: 100%, stroke: black + 1pt)
+    #place(top + center, dx: dx, dy: dy)[
+      #illustration
+    ]
+  ]
+}
+
 #let prelude-pages(
   extra-faithful,
   title-font,

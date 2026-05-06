@@ -20,9 +20,12 @@ typst init @preview/rezvan-chalmers-cse-thesis:0.2.0
 
 ## Usage
 ```typst
-#import "@preview/rezvan-chalmers-cse-thesis:0.2.0": template, appendices
+#import "@preview/rezvan-chalmers-cse-thesis:0.2.0": template, appendices, illustrated-cover-background
 
 #let department = "Department of Computer Science and Engineering"
+#let cover-background = illustrated-cover-background(
+  image("cover.svg", width: 45%),
+)
 
 #show: template.with(
   title: "Your Thesis Title",
@@ -37,6 +40,7 @@ typst init @preview/rezvan-chalmers-cse-thesis:0.2.0
   acknowledgements: [Write your acknowledgements here.],
   keywords: ("keyword-1", "keyword-2"),
   series: none,
+  cover-background: cover-background,
   cover-caption: [Caption for the cover illustration, if used.],
   printed-by: none,
 )
