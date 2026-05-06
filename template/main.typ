@@ -1,4 +1,4 @@
-#import "@preview/rezvan-chalmers-cse-masters-thesis:0.2.0": template, appendices
+#import "@preview/rezvan-chalmers-cse-thesis:0.2.0": template, appendices
 
 #let department = "Department of Computer Science and Engineering"
 

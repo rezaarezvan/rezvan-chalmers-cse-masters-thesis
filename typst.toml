@@ -1,5 +1,5 @@
 [package]
-name = "rezvan-chalmers-cse-masters-thesis"
+name = "rezvan-chalmers-cse-thesis"
 version = "0.2.0"
 entrypoint = "src/lib.typ"
 authors = ["Reza Rezvan <reza@rezvan.xyz>"]
@@ -7,7 +7,7 @@ license = "MIT"
 description = "Master’s thesis at Chalmers/GU CSE."
 keywords = ["thesis", "chalmers", "gothenburg", "cse", "academic"]
 categories = ["report"]
-repository = "https://github.com/rezaarezvan/rezvan-chalmers-cse-masters-thesis"
+repository = "https://github.com/rezaarezvan/rezvan-chalmers-cse-thesis"
 compiler = "0.14.0"
 exclude = [".github/*", "examples/*"]
 
