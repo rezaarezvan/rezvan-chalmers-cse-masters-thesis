@@ -15,12 +15,12 @@ an official Chalmers or University of Gothenburg package.
 
 ## Install / Init
 ```sh
-typst init @preview/rezvan-chalmers-cse-masters-thesis:0.1.0
+typst init @preview/rezvan-chalmers-cse-masters-thesis:0.2.0
 ```
 
 ## Usage
 ```typst
-#import "@preview/rezvan-chalmers-cse-masters-thesis:0.1.0": template, appendices
+#import "@preview/rezvan-chalmers-cse-masters-thesis:0.2.0": template, appendices
 
 #let department = "Department of Computer Science and Engineering"
 
