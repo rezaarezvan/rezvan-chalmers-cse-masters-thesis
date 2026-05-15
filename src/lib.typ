@@ -5,13 +5,14 @@
 #import "pages/ackpage.typ": ackpage
 #import "pages/tocpage.typ": tocpage, flex-caption
 #import "font-sizes.typ"
+#import "doctoral.typ": doctoral-template, paper, appended-papers, bibliography-section, presentation-sheet, errata, erratum
 
 #let thesisblue = rgb("#0066CC")
 #let thesisred = rgb("#CC0000")
 #let thesispurple = rgb("#6600CC")
 #let thesisgray = rgb("#666666")
 
-#let runtime-state = state("chalmers-cse-masters-thesis-runtime", (oneside: false))
+#let runtime-state = state("chalmers-cse-thesis-runtime", (oneside: false))
 
 #let heading-supplement(it) = if it.depth == 1 {
   [Chapter]
@@ -90,13 +91,13 @@
   }
 }
 
-#let illustrated-cover-background(
+#let cover-background(
   illustration,
-  extra-faithful: false,
+  faithful: false,
   dx: 10%,
   dy: 15%,
 ) = {
-  let inset = if extra-faithful {
+  let inset = if faithful {
     (left: 60pt, right: 10pt, top: 44pt, bottom: 30pt)
   } else {
     (left: 60pt, right: 60pt, top: 44pt, bottom: 30pt)
@@ -113,7 +114,7 @@
 }
 
 #let prelude-pages(
-  extra-faithful,
+  faithful,
   title-font,
   school,
   date,
@@ -147,7 +148,7 @@
   }
 
   frontpage(
-    extra-faithful,
+    faithful,
     title-font,
     school,
     date.year(),
@@ -167,7 +168,7 @@
   }
 
   thirdpage(
-    extra-faithful,
+    faithful,
     school,
     date.year(),
     title,
@@ -186,7 +187,7 @@
 
   set page(footer: footer(numbering: "i"), header: none)
   fourthpage(
-    extra-faithful,
+    faithful,
     school,
     date.year(),
     title,
@@ -203,7 +204,7 @@
     series,
   )
 
-  abspage(extra-faithful, school, title, subtitle, authors, department, abstract, keywords)
+  abspage(faithful, school, title, subtitle, authors, department, abstract, keywords)
 
   blankpagebreak()
   ackpage(date, authors, acknowledgements, city)
@@ -239,10 +240,10 @@
   content
 }
 
-#let template(
-  font: "Latin Modern Roman",
-  title-font: "Latin Modern Sans",
-  extra-faithful: false,
+#let master-template(
+  font: "New Computer Modern",
+  title-font: "New Computer Modern",
+  faithful: false,
   school: ("Chalmers University of Technology", "University of Gothenburg"),
   date: datetime.today(),
   title: "A Chalmers University of Technology Master’s thesis template for Typst",
@@ -323,7 +324,7 @@
   let titlepage-logo-node = as-content-node(titlepage-logo, width: 25%)
 
   prelude-pages(
-    extra-faithful,
+    faithful,
     title-font,
     school,
     date,
@@ -418,4 +419,126 @@
   }
 
   content
+}
+
+#let template(
+  kind: "master",
+  font: "New Computer Modern",
+  title-font: "New Computer Modern",
+  heading-font: "New Computer Modern",
+  faithful: false,
+  school: ("Chalmers University of Technology", "University of Gothenburg"),
+  date: datetime.today(),
+  title: "A Chalmers University of Technology thesis template for Typst",
+  subtitle: none,
+  authors: ("Name Familyname",),
+  author: none,
+  department: "Department of Computer Science and Engineering",
+  subject: "Computer Science and Engineering",
+  supervisor: ("Supervisor Supervisorsson", "Department"),
+  advisor: none,
+  examiner: ("Examiner Examinersson", "Department"),
+  abstract: [Abstract text about your project in Computer Science and Engineering],
+  keywords: (),
+  acknowledgements: [Acknowledgements.],
+  notation: none,
+  figures: true,
+  tables: true,
+  listings: false,
+  draft: false,
+  oneside: false,
+  margin: (top: 3cm, bottom: 3cm, inside: 3cm, outside: 3cm),
+  city: "Gothenburg, Sweden",
+  cover-background: none,
+  titlepage-logo: none,
+  typeset-with: "Typst",
+  cover-caption: none,
+  printed-by: none,
+  series: none,
+  degree-type: "philosophy",
+  division: "Software Engineering",
+  research-group: none,
+  address: [SE-412 96 Gothenburg,\ Sweden],
+  isbn: "xxx-xx-xxxx-xxx-x",
+  phd-series-number: "xxxx",
+  technical-report-number: "XXXX",
+  lic-issn: "1652-876X",
+  phd-issn: "0346-718X",
+  dedication: none,
+  publications: (),
+  authorship-statement: none,
+  include-publication-list: true,
+  content,
+) = {
+  if kind == "master" {
+    master-template(
+      font: font,
+      title-font: title-font,
+      faithful: faithful,
+      school: school,
+      date: date,
+      title: title,
+      subtitle: subtitle,
+      authors: authors,
+      department: department,
+      subject: subject,
+      supervisor: supervisor,
+      advisor: advisor,
+      examiner: examiner,
+      abstract: abstract,
+      keywords: keywords,
+      acknowledgements: acknowledgements,
+      notation: notation,
+      figures: figures,
+      tables: tables,
+      listings: listings,
+      draft: draft,
+      oneside: oneside,
+      margin: margin,
+      city: city,
+      cover-background: cover-background,
+      titlepage-logo: titlepage-logo,
+      typeset-with: typeset-with,
+      cover-caption: cover-caption,
+      printed-by: printed-by,
+      series: series,
+      content,
+    )
+  } else if kind == "phd" or kind == "licentiate" {
+    doctoral-template(
+      kind: kind,
+      font: font,
+      heading-font: heading-font,
+      degree-type: degree-type,
+      date: date,
+      title: title,
+      subtitle: subtitle,
+      author: if author == none { authors.join(", ") } else { author },
+      department: department,
+      division: division,
+      research-group: research-group,
+      school: school,
+      city: city,
+      address: address,
+      isbn: isbn,
+      phd-series-number: phd-series-number,
+      technical-report-number: technical-report-number,
+      lic-issn: lic-issn,
+      phd-issn: phd-issn,
+      dedication: dedication,
+      abstract: abstract,
+      keywords: keywords,
+      publications: publications,
+      authorship-statement: authorship-statement,
+      acknowledgements: acknowledgements,
+      include-publication-list: include-publication-list,
+      figures: figures,
+      tables: tables,
+      oneside: oneside,
+      draft: draft,
+      content,
+    )
+  } else {
+    panic("kind must be \"master\", \"phd\", or \"licentiate\"")
+  }
 }

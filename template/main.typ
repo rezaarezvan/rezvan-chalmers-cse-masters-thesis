@@ -1,8 +1,9 @@
-#import "@preview/rezvan-chalmers-cse-thesis:0.2.0": template, appendices
+#import "@preview/rezvan-chalmers-cse-thesis:0.3.0": template, appendices
 
 #let department = "Department of Computer Science and Engineering"
 
 #show: template.with(
+  kind: "master",
   title: "Your Thesis Title",
   subtitle: "An optional subtitle",
   authors: ("Your Name",),

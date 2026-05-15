@@ -3,6 +3,7 @@
 #let department = "Department of Computer Science and Engineering"
 
 #show: template.with(
+  kind: "master",
   school: ("Chalmers University of Technology", "University of Gothenburg"),
   title: "Title",
   subtitle: "Subtitle",
